@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Button from "../components/Button.astro";
+---
+
+<DefaultLayout>
+  <h3>Introducing:</h3>
+  <h1>Sys&trade;</h1>
+  <p>
+    The fun little Astro Component library by your friends from the <a
+      href="https://astrobuild.club"
+      target="_blank">AstroBuildClub</a
+    >
+  </p>
+
+  <Image
+    src="/astrobuildclub-neil.svg"
+    alt="Neil the AstroBuildClub mascot"
+    width="100"
+    height="100"
+    class="neil"
+  />
+
+  <Button leadingIcon="books" link="/components"> View Components </Button>
+</DefaultLayout>

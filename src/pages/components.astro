@@ -1,0 +1,185 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Button from "../components/Button.astro";
+---
+
+<DefaultLayout>
+  <h1 class="page-title"><a href="/">Sys&trade;</a></h1>
+
+  <section class="section section-buttons">
+    <header class="section-header">
+      <a name="buttons"><h2 class="header-title">Buttons</h2></a>
+      <p class="header-introduction">
+        The Sys&trade; Button component is a versatile and highly customizable
+        button designed for modern web applications. Based on an anchor (<code
+          >&lt;a&gt;</code
+        >) tag, this component allows developers to create buttons with a range
+        of properties, making it suitable for various UI requirements. Its
+        flexibility and ease of use make it an essential part of the Sys™
+        component library.
+      </p>
+    </header>
+
+    <h3>Examples</h3>
+    <div class="row">
+      <Button kind="primary" size="xs" leadingIcon="circle-check-filled">
+        Button
+      </Button>
+      <Button kind="primary" size="sm" leadingIcon="circle-check-filled">
+        Button
+      </Button>
+      <Button kind="primary" size="md" leadingIcon="circle-check-filled">
+        Button
+      </Button>
+      <Button kind="primary" size="lg" leadingIcon="circle-check-filled">
+        Button
+      </Button>
+      <Button kind="primary" size="xl" leadingIcon="circle-check-filled">
+        Button
+      </Button>
+      <Button kind="primary" size="2xl" leadingIcon="circle-check-filled">
+        Button
+      </Button>
+      <Button kind="primary" size="3xl" leadingIcon="circle-check-filled">
+        Button
+      </Button>
+      <Button kind="primary" size="4xl" leadingIcon="circle-check-filled">
+        Button
+      </Button>
+    </div>
+
+    <div class="row">
+      <Button kind="primary" leadingIcon="circle-check-filled"> Button </Button>
+      <Button kind="secondary" leadingIcon="circle-check-filled">
+        Button
+      </Button>
+      <Button kind="tertiary" leadingIcon="circle-check-filled">
+        Button
+      </Button>
+      <Button kind="ghost" leadingIcon="circle-check-filled"> Button </Button>
+      <Button kind="primary" shape="pill"> Button </Button>
+      <Button kind="secondary" shape="pill"> Button </Button>
+      <Button kind="tertiary" shape="pill"> Button </Button>
+      <Button kind="ghost" shape="pill"> Button </Button>
+    </div>
+
+    <div class="row">
+      <Button
+        kind="tertiary"
+        size="large"
+        shape="pill"
+        leadingIcon="device-desktop"
+        trailingIcon="external-link"
+        link="https://allthis.digital"
+        target="_blank"
+        ariaLabel="Button to visit the All This website"
+        tabIndex={2}
+      >
+        The All This website
+      </Button>
+
+      <Button
+        kind="tertiary"
+        size="large"
+        shape="pill"
+        leadingIcon="device-desktop"
+        trailingIcon="external-link"
+        link="https://allthis.digital"
+        target="_blank"
+        ariaLabel="Button to visit the All This website"
+        tabIndex={2}
+        disabled={true}
+      >
+        The All This website
+      </Button>
+    </div>
+
+    <footer class="section-footer">
+      <h3>Attributes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Optional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>kind</td>
+            <td>Specifies the style of the button.</td>
+            <td>"primary" | "secondary" | "tertiary" | "ghost"</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>size</td>
+            <td>Defines the size of the button.</td>
+            <td>string</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>shape</td>
+            <td>Determines the shape of the button.</td>
+            <td>"square" | "rounded" | "pill"</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>leadingIcon</td>
+            <td
+              >Specifies the name of an icon to display at the beginning of the
+              button text.</td
+            >
+            <td>string</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>trailingIcon</td>
+            <td
+              >Specifies the name of an icon to display at the end of the button
+              text.</td
+            >
+            <td>string</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>disabled</td>
+            <td
+              >A boolean attribute to disable the button, preventing user
+              interaction.</td
+            >
+            <td>boolean</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>link</td>
+            <td>The URL the button should navigate to when clicked.</td>
+            <td>string</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>target</td>
+            <td>Specifies where to open the linked document.</td>
+            <td>"_blank" | "_parent" | "_self" | "_top" | string</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>ariaLabel</td>
+            <td
+              >Defines a string value that labels the button for accessibility
+              purposes.</td
+            >
+            <td>string</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>tabIndex</td>
+            <td>Sets the tab order of the button within the page.</td>
+            <td>number</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </footer>
+  </section>
+</DefaultLayout>
