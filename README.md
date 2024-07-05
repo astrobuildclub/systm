@@ -1,4 +1,4 @@
-# Sys™, a fun little AstroJS component library
+# Sys™ — A fun little AstroJS component library
 
 ## 🧩 Dependancies
 
