@@ -3,7 +3,7 @@
 ## 🧩 Dependancies
 
 Systm uses the following libraries to do the heavy lifting:
-[![Astro Icons](https://www.astroicon.dev/)]
+[Astro Icons](https://www.astroicon.dev/)
 with the tabler icon set
 
 ```sh
