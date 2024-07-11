@@ -4,15 +4,21 @@ import { combineClasses } from "../lib/utils";
 
 // Type Definitions
 interface Props {
+  shadow?: Boolean;
   shape?: "square" | "rounded" | "pill";
 }
 
 // Destructure Props
-const { shape = "rounded" } = Astro.props;
+const { shadow, shape = "rounded" } = Astro.props;
 
 // Set variables
+const shadowClass = shadow ? "has-shadow" : " ";
 const shapeClassPrefix = shape ? "btn-" : "";
-const classes = combineClasses(["btn-group", `${shapeClassPrefix}${shape}`]);
+const classes = combineClasses([
+  "btn-group",
+  shadowClass,
+  `${shapeClassPrefix}${shape}`,
+]);
 ---
 
 <div class={classes} role="group">
@@ -23,9 +29,14 @@ const classes = combineClasses(["btn-group", `${shapeClassPrefix}${shape}`]);
   :root {
     --radius-default: 0.25rem;
     --radius-full: 999rem;
+
+    --shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --offset-shadow: 0 0 #0000;
+    --shadow-colored: 0 1px 2px 0 var(--shadow-color);
   }
   .btn-group {
     display: inline-flex;
+    gap: 1px;
   }
   .btn-group > * {
     border-radius: 0 !important;
@@ -54,5 +65,15 @@ const classes = combineClasses(["btn-group", `${shapeClassPrefix}${shape}`]);
   .btn-group.btn-pill > *:last-child {
     border-top-right-radius: var(--radius-full) !important;
     border-bottom-right-radius: var(--radius-full) !important;
+  }
+  .btn-group.has-shadow {
+    box-shadow: var(--offset-shadow, 0 0 #0000), var(--shadow, 0 0 #0000),
+      var(--shadow);
+  }
+  .btn-group.btn-rounded.has-shadow {
+    border-radius: var(--radius-default) !important;
+  }
+  .btn-group.btn-pill.has-shadow {
+    border-radius: var(--radius-full) !important;
   }
 </style>

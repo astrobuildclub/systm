@@ -24,15 +24,13 @@ import ButtonGroup from "../components/ButtonGroup.astro";
     <h3>Examples</h3>
 
     <div class="row">
-      <ButtonGroup shape="pill">
-        <Button kind="primary" size="xs" leadingIcon="circle-check-filled">
-          One
+      <ButtonGroup shape="pill" shadow={true}>
+        <Button kind="secondary" shape="pill" leadingIcon="arrow-left">
+          Prev
         </Button>
-        <Button kind="primary" size="xs" leadingIcon="circle-check-filled">
-          Two
-        </Button>
-        <Button kind="primary" size="xs" leadingIcon="circle-check-filled">
-          Three
+        <Button kind="secondary" shape="square">Index </Button>
+        <Button kind="secondary" shape="rounded" trailingIcon="arrow-right">
+          Next
         </Button>
       </ButtonGroup>
 
