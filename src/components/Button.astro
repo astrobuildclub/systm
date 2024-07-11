@@ -109,11 +109,23 @@ const linkRef = link && isValidHref(link) ? link : "#";
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.5rem;
-    border: none;
+    border: 2px solid transparent;
     background: transparent;
     white-space: nowrap; 
     letter-spacing: 0.0125rem;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
   }
+
+  .btn:not(.default)::-moz-focus-inner {
+    border-style: none;
+  }
+
+  .btn:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
 
   /* Kind */
   .btn-primary,
@@ -127,6 +139,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
   .btn-primary:active,
   .btn-primary:focus{
     background-color: var(--button-primary-active);
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px  var(--button-primary-active);
   }
 
   .btn-secondary,
@@ -140,6 +153,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
   .btn-secondary:active,
   .btn-secondary:focus{
     background-color: var(--button-secondary-active);
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px  var(--button-secondary-active);
   }
 
   .btn-tertiary,
@@ -153,6 +167,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
   .btn-tertiary:active,
   .btn-tertiary:focus{
     background-color: var(--button-tertiary-active);
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px  var(--button-tertiary-active);
   }
 
   /* Size */
