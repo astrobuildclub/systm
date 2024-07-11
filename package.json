@@ -14,9 +14,11 @@
     "@fontsource-variable/inter-tight": "^5.0.21",
     "astro": "^4.11.5",
     "astro-icon": "^1.1.0",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "utopia-core-scss": "^1.0.1"
   },
   "devDependencies": {
-    "@iconify-json/tabler": "^1.1.116"
+    "@iconify-json/tabler": "^1.1.116",
+    "sass": "^1.77.6"
   }
 }

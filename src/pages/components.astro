@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Button from "../components/Button.astro";
+import ButtonGroup from "../components/ButtonGroup.astro";
 ---
 
 <DefaultLayout>
@@ -21,6 +22,32 @@ import Button from "../components/Button.astro";
     </header>
 
     <h3>Examples</h3>
+
+    <div class="row">
+      <ButtonGroup shape="pill">
+        <Button kind="primary" size="xs" leadingIcon="circle-check-filled">
+          One
+        </Button>
+        <Button kind="primary" size="xs" leadingIcon="circle-check-filled">
+          Two
+        </Button>
+        <Button kind="primary" size="xs" leadingIcon="circle-check-filled">
+          Three
+        </Button>
+      </ButtonGroup>
+
+      <Button
+        shape="pill"
+        kind="secondary"
+        size="2xl"
+        leadingIcon="calendar"
+        trailingIcon="chevron-down"
+        link="https://mieras.org"
+      >
+        Selecteer datum
+      </Button>
+    </div>
+
     <div class="row">
       <Button kind="primary" size="xs" leadingIcon="circle-check-filled">
         Button

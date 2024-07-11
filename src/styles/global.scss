@@ -1,3 +1,6 @@
+  /* Grid and Type scales are managed with https://utopia.fyi/ */
+@use "utopia.scss";
+
 :root {
   /* Font Families */
   --font-system: system-ui, sans-serif;
@@ -15,17 +18,11 @@
   --clr-red: #fe2601;
   --clr-pink: #f9a4cf;
 
-  /*type scale */
-  --fs-sm: clamp(0.8rem, 1.08vi + 0.53rem, 1.5rem);
-  --fs-base: clamp(1rem, 1.54vi + 0.62rem, 2rem);
-  --fs-md: clamp(1.25rem, 2.18vi + 0.71rem, 2.67rem);
-  --fs-lg: clamp(1.56rem, 3.06vi + 0.8rem, 3.55rem);
-  --fs-xl: clamp(1.95rem, 4.28vi + 0.88rem, 4.74rem);
-  --fs-xxl: clamp(2.44rem, 5.96vi + 0.95rem, 6.31rem);
-  --fs-xxxl: clamp(3.05rem, 8.25vi + 0.99rem, 8.42rem);
-
   --padding-primary: 1rem;
   --padding-xl: 4rem;
+
+  /* Letterspacing */
+  --tight: -0.05em;
 
   /* Light Theme */
   --background: var(--clr-gray-10);
@@ -51,6 +48,31 @@
 /*---------------------*/
 /* GLOBAL STYLES       */
 /*---------------------*/
+/* Utopia Type */
+/*
+var(--fs--2);
+var(--fs--1);
+var(--fs-0);
+var(--fs-1);
+var(--fs-2);
+var(--fs-3);
+var(--fs-4);
+var(--fs-5);
+*/
+/* Utopia Scale */
+/*
+var(--space-3xs);
+var(--space-2xs);
+var(--space-xs);
+var(--space-s);
+var(--space-m);
+var(--space-l);
+var(--space-xl);
+var(--space-2xl);
+var(--space-3xl);
+*/
+
+
 *,
 html,
 body {
@@ -62,7 +84,7 @@ body {
 body {
   font-family: "Inter Tight Variable", sans-serif;
   font-weight: 400;
-  font-size: var(--fs-sm);
+  font-size: var(--fs-0);
   line-height: 1.25;
   letter-spacing: -0.0133rem;
   text-rendering: optimizeLegibility;
@@ -75,22 +97,22 @@ body {
 }
 
 h1 {
-  font-size: var(--fs-xxxl);
-  letter-spacing: -0.33rem;
+  font-size: var(--fs-5);
+  letter-spacing: var(--tight);
   padding-bottom: 2rem;
 }
 h2 {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-4);
   padding-bottom: 0.5rem;
 }
 
 h3 {
-  font-size: var(--fs-md);
+  font-size: var(--fs-3);
   padding-bottom: 0.5rem;
 }
 
 .header-introduction {
-  font-size: var(--fs-base);
+  font-size: var(--fs-0);
   max-width: 80ch;
   padding-bottom: 2rem;
 }
@@ -115,14 +137,14 @@ table {
 }
 th {
   border-bottom: 1px solid var(--border-color);
-  font-size: 0.9rem;
+  font-size: var(--fs--1);
   padding: 0.5rem 1rem;
   text-align: left;
 }
 
 td {
   border-bottom: 1px solid var(--border-color);
-  font-size: 0.9rem;
+  font-size: var(--fs--1);
   padding: 1rem;
 }
 th {

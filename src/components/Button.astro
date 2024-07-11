@@ -64,9 +64,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
 </a>
 
 <style>
-
   /* Variables  */
-
   :root{
     --radius-default: 0.25rem;
     --radius-full: 999rem;
@@ -88,6 +86,15 @@ const linkRef = link && isValidHref(link) ? link : "#";
     --button-tertiary-active: #111111;
 
     --button-disabled:#D6D6D6;
+
+    --button-fs-xs: 0.75rem;
+    --button-fs-sm: 0.875rem;
+    --button-fs-md: 0.875rem;
+    --button-fs-lg: 1rem;
+    --button-fs-xl: 1rem;
+    --button-fs-2xl: 1.25rem;
+    --button-fs-3xl: 1.5rem;
+    --button-fs-4xl: 1.8rem;
   }
 
   /* Defaults */
@@ -101,7 +108,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
     color: inherit;
     font-size: 1rem;
     font-weight: 600;
-    line-height: 1rem;
+    line-height: 1.5rem;
     border: none;
     background: transparent;
     white-space: nowrap; 
@@ -151,7 +158,8 @@ const linkRef = link && isValidHref(link) ? link : "#";
   /* Size */
   .btn-xs {
     padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
+    font-size: var(--button-fs-xs);
+    line-height: 1rem;
     max-height: 1.5rem;
   }
   .btn-xs .btn-icon{
@@ -159,8 +167,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
   }
   .btn-sm {
     padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: var(--button-fs-sm);
     max-height: 2rem;
   }
   .btn-sm .btn-icon{
@@ -168,8 +175,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
   }
   .btn-md {
     padding: 0.5rem 0.85rem;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font-size: var(--button-fs-md);
     max-height: 2.5rem;
   }
   .btn-md .btn-icon{
@@ -177,8 +183,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
   }
   .btn-lg {
     padding: 0.75rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: var(--button-fs-lg);
     max-height: 3rem;
   }
   .btn-lg .btn-icon{
@@ -186,8 +191,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
   }
   .btn-xl {
     padding: 1rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: var(--button-fs-xl);
     max-height: 3.5rem;
   }
   .btn-xl .btn-icon{
@@ -195,8 +199,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
   }
   .btn-2xl {
     padding: 1.25rem 1.5rem;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
+    font-size: var(--button-fs-2xl);
     max-height: 4rem;
   }
   .btn-2xl .btn-icon{
@@ -204,8 +207,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
   }
   .btn-3xl {
     padding: 1.5rem 1.5rem;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    font-size: var(--button-fs-3xl);
     max-height: 4.5rem;
   }
   .btn-3xl .btn-icon{
@@ -213,8 +215,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
   }
   .btn-4xl {
     padding: 2.25rem 2rem;
-    font-size: 1.8rem;
-    line-height: 1.5rem;
+    font-size: var(--button-fs-4xl);
     max-height: 6rem;
   }
   .btn-4xl .btn-icon{
@@ -224,7 +225,7 @@ const linkRef = link && isValidHref(link) ? link : "#";
  
   /* Shape */
   .btn-square{
-    border-radius: none;
+    border-radius: 0;
   }
   .btn-rounded{
     border-radius: var(--radius-default);

@@ -1,0 +1,58 @@
+---
+// Imports
+import { combineClasses } from "../lib/utils";
+
+// Type Definitions
+interface Props {
+  shape?: "square" | "rounded" | "pill";
+}
+
+// Destructure Props
+const { shape = "rounded" } = Astro.props;
+
+// Set variables
+const shapeClassPrefix = shape ? "btn-" : "";
+const classes = combineClasses(["btn-group", `${shapeClassPrefix}${shape}`]);
+---
+
+<div class={classes} role="group">
+  <slot />
+</div>
+
+<style is:global>
+  :root {
+    --radius-default: 0.25rem;
+    --radius-full: 999rem;
+  }
+  .btn-group {
+    display: inline-flex;
+  }
+  .btn-group > * {
+    border-radius: 0 !important;
+  }
+  /* Shape */
+  .btn-group.btn-square > *:first-child {
+    border-radius: 0 !important;
+  }
+  .btn-group.btn-square > *:last-child {
+    border-radius: 0 !important;
+  }
+
+  .btn-group.btn-rounded > *:first-child {
+    border-top-left-radius: var(--radius-default) !important;
+    border-bottom-left-radius: var(--radius-default) !important;
+  }
+  .btn-group.btn-rounded > *:last-child {
+    border-top-right-radius: var(--radius-default) !important;
+    border-bottom-right-radius: var(--radius-default) !important;
+  }
+
+  .btn-group.btn-pill > *:first-child {
+    border-top-left-radius: var(--radius-full) !important;
+    border-bottom-left-radius: var(--radius-full) !important;
+  }
+  .btn-group.btn-pill > *:last-child {
+    border-top-right-radius: var(--radius-full) !important;
+    border-bottom-right-radius: var(--radius-full) !important;
+  }
+</style>
