@@ -10,13 +10,28 @@ import MarqueeItem from "../components/MarqueeItem.astro";
   <h1 class="page-title"><a href="/">Sys&trade;</a></h1>
 
   <section class="section section-marquee">
-    <Marquee>
-      <MarqueeItem>Dit is een test</MarqueeItem>
-      <MarqueeItem>Dit is een test</MarqueeItem>
-      <MarqueeItem>Dit is een test</MarqueeItem>
-      <MarqueeItem>Dit is een test</MarqueeItem>
-      <MarqueeItem>Dit is een test</MarqueeItem>
-      <MarqueeItem>Dit is een test</MarqueeItem>
+    <Marquee title="one" rotation={-4}>
+      <MarqueeItem>
+        <span class="spinningStar">&#10033;</span> Salt City Golf Carts
+      </MarqueeItem>
+    </Marquee>
+    <Marquee title="two" rotation={-4}>
+      <MarqueeItem> Street Legal </MarqueeItem>
+      <MarqueeItem>
+        <span class="spinningStar">&#10033;</span>Luxury
+      </MarqueeItem>
+      <MarqueeItem>
+        <span class="spinningStar">&#10033;</span>Lifted
+      </MarqueeItem>
+      <MarqueeItem>
+        <span class="spinningStar">&#10033;</span>Sound System
+      </MarqueeItem>
+      <MarqueeItem>
+        <span class="spinningStar">&#10033;</span>Smooth
+      </MarqueeItem>
+      <MarqueeItem>
+        <span class="spinningStar">&#10033;</span>Bannger
+      </MarqueeItem>
     </Marquee>
   </section>
   <section class="section section-buttons">

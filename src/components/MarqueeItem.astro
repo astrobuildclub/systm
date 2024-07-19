@@ -6,14 +6,23 @@
 
 <style>
   :root {
-    --marquee-font: clamp(16rem, 12rem + 40vw, 32rem);
+    --marquee-font: clamp(8rem, 6rem + 15vw, 15rem);
   }
+  /* .marquee-item {
+    font-size: 15vw;
+    line-height: 1em;
+    color: #ccc;
+    display: inline-block;
+    text-transform: uppercase;
+    white-space: nowrap;
+  } */
+
   .marquee-item {
     display: inline-block;
     padding: 0 calc(var(--marquee-font) / 10);
     letter-spacing: -0.55vw;
     font-weight: 900;
     font-size: var(--marquee-font);
-    line-height: 80%;
+    line-height: 112%;
   }
 </style>
