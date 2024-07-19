@@ -1,0 +1,19 @@
+---
+
+---
+
+<div class="marquee-item"><slot /></div>
+
+<style>
+  :root {
+    --marquee-font: clamp(16rem, 12rem + 40vw, 32rem);
+  }
+  .marquee-item {
+    display: inline-block;
+    padding: 0 calc(var(--marquee-font) / 10);
+    letter-spacing: -0.55vw;
+    font-weight: 900;
+    font-size: var(--marquee-font);
+    line-height: 80%;
+  }
+</style>

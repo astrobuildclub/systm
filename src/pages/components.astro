@@ -2,11 +2,23 @@
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import Button from "../components/Button.astro";
 import ButtonGroup from "../components/ButtonGroup.astro";
+import Marquee from "../components/Marquee.astro";
+import MarqueeItem from "../components/MarqueeItem.astro";
 ---
 
 <DefaultLayout>
   <h1 class="page-title"><a href="/">Sys&trade;</a></h1>
 
+  <section class="section section-marquee">
+    <Marquee>
+      <MarqueeItem>Dit is een test</MarqueeItem>
+      <MarqueeItem>Dit is een test</MarqueeItem>
+      <MarqueeItem>Dit is een test</MarqueeItem>
+      <MarqueeItem>Dit is een test</MarqueeItem>
+      <MarqueeItem>Dit is een test</MarqueeItem>
+      <MarqueeItem>Dit is een test</MarqueeItem>
+    </Marquee>
+  </section>
   <section class="section section-buttons">
     <header class="section-header">
       <a name="buttons"><h2 class="header-title">Buttons</h2></a>

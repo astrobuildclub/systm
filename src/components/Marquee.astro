@@ -1,0 +1,45 @@
+---
+
+---
+
+<section class="marquee">
+  <div class="marquee-items">
+    <slot />
+  </div>
+</section>
+
+<style>
+  :root {
+    --duration: 40s;
+  }
+  .marquee {
+    display: inline-block;
+    box-sizing: content-box;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .marquee-items {
+    display: inline-block;
+    -webkit-animation-duration: var(--duration);
+    animation-duration: var(--duration);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: marquee;
+    animation-name: marquee;
+    box-sizing: content-box;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+</style>
