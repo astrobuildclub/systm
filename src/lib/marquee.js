@@ -1,36 +1,49 @@
+// Import GSAP & Lenis
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis';
 
+// Register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
 
+// Initialize Lenis
 const lenis = new Lenis({
   duration: 1.3,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smooth: true,
 });
 
+// Request Animation Frame
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
 
-let direction = 1;
 
-const roll1 = roll(".marquee-one .marquee-items", {duration: 30}),
-      roll2 = roll(".marquee-two .marquee-items", {duration: 30}, true),
-      scroll = ScrollTrigger.create({
-        onUpdate(self) {
-          if (self.direction !== direction) {
-            direction *= -1;
-            roll1.timeScale(direction * 10);
-            roll2.timeScale(direction * 10);
-            gsap.to([roll1, roll2], {timeScale: direction, overwrite: true, duration: 1});
+// For each Marquee
+const marquees = document.querySelectorAll(".marquee");
+
+marquees.forEach(function (comp, index){ 
+  let direction = 1;
+  const items = comp.querySelector(".marquee-items");
+  const rolltime = comp.dataset.duration;
+  const reverse = comp.dataset.direction;
+  let isReverse = (reverse == "rtl")? false : true;
+
+  const roll1 = roll(items, {duration: rolltime}, isReverse),
+        scroll = ScrollTrigger.create({
+          onUpdate(self) {
+            if (self.direction !== direction) {
+              direction *= -1;
+              roll1.timeScale(direction * 10);
+              gsap.to(roll1, {timeScale: direction, overwrite: true, duration: 1});
+            }
           }
-        }
-      });
+  });
+});
 
+// animation function (not sure how this works yet)
 function roll(targets, vars, reverse) {
   vars = vars || {};
   vars.ease || (vars.ease = "none");
@@ -59,8 +72,8 @@ function roll(targets, vars, reverse) {
 }
 
 
-
-const tween = gsap.to(".spinningStar", {
+// This makes the spinningStar thing work (we can remove this)
+const tween = gsap.to(".spinner", {
   rotation:1440, 
   duration: 40, 
   ease: "none", 
@@ -70,7 +83,7 @@ const tween = gsap.to(".spinningStar", {
 let tl = gsap.timeline();
 
 ScrollTrigger.create({
-  trigger: ".spinningStar",
+  trigger: ".spinner",
   start: 'center center',
   end: '+=5000',
   onUpdate({ getVelocity }) {

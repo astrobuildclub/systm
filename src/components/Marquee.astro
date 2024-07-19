@@ -3,19 +3,34 @@ interface Props {
   title?: string;
   rotation?: number;
   isInteractive?: boolean;
+  duration?: number;
+  direction?: "ltr" | "rtl";
 }
-const { rotation = 0, title = "one", isInteractive = true } = Astro.props;
+const {
+  direction = "rtl",
+  rotation = 0,
+  title = "one",
+  duration = 30,
+  isInteractive = true,
+} = Astro.props;
 const marqueeRotation = `${rotation}deg`;
 ---
 
-<section class=`marquee marquee-${title}` data-rotation={marqueeRotation}>
+<section
+  class=`marquee marquee-${title}`
+  data-direction={direction}
+  data-rotation={marqueeRotation}
+  data-duration={duration}
+>
   <div class="marquee-wrapper">
     <div class="marquee-items">
       <slot />
     </div>
   </div>
 </section>
+
 <script src="../lib/marquee.js"></script>
+
 <style define:vars={{ marqueeRotation }}>
   :root {
     --duration: 40s;

@@ -10,27 +10,30 @@ import MarqueeItem from "../components/MarqueeItem.astro";
   <h1 class="page-title"><a href="/">Sys&trade;</a></h1>
 
   <section class="section section-marquee">
-    <Marquee title="one" rotation={-4}>
+    <Marquee title="one" direction="ltr" rotation={-4}>
       <MarqueeItem>
-        <span class="spinningStar">&#10033;</span> Salt City Golf Carts
+        Sys&trade; <span class="spinner">&#10033;</span> A fun little AstroJS component
+        library made by your friends at AstroBuildClub
       </MarqueeItem>
     </Marquee>
-    <Marquee title="two" rotation={-4}>
-      <MarqueeItem> Street Legal </MarqueeItem>
+    <Marquee title="two" direction="rtl" rotation={4}>
       <MarqueeItem>
-        <span class="spinningStar">&#10033;</span>Luxury
+        <span class="spinner">&#10033;</span> Buttons
       </MarqueeItem>
       <MarqueeItem>
-        <span class="spinningStar">&#10033;</span>Lifted
+        <span class="spinner">&#10033;</span> Marquees
       </MarqueeItem>
       <MarqueeItem>
-        <span class="spinningStar">&#10033;</span>Sound System
+        <span class="spinner">&#10033;</span> Typographic Scales
       </MarqueeItem>
       <MarqueeItem>
-        <span class="spinningStar">&#10033;</span>Smooth
+        <span class="spinner">&#10033;</span> Design
       </MarqueeItem>
       <MarqueeItem>
-        <span class="spinningStar">&#10033;</span>Bannger
+        <span class="spinner">&#10033;</span> System
+      </MarqueeItem>
+      <MarqueeItem>
+        <span class="spinner">&#10033;</span> Future
       </MarqueeItem>
     </Marquee>
   </section>
