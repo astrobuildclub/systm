@@ -36,7 +36,7 @@ marquees.forEach(function (comp, index){
           onUpdate(self) {
             if (self.direction !== direction) {
               direction *= -1;
-              roll1.timeScale(direction * 10);
+              roll1.timeScale(direction * (rolltime/4));
               gsap.to(roll1, {timeScale: direction, overwrite: true, duration: 1});
             }
           }

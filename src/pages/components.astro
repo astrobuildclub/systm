@@ -10,13 +10,13 @@ import MarqueeItem from "../components/MarqueeItem.astro";
   <h1 class="page-title"><a href="/">Sys&trade;</a></h1>
 
   <section class="section section-marquee">
-    <Marquee title="one" direction="ltr" rotation={-4}>
+    <Marquee title="one" direction="ltr" duration={60} rotation={-4}>
       <MarqueeItem>
         Sys&trade; <span class="spinner">&#10033;</span> A fun little AstroJS component
         library made by your friends at AstroBuildClub
       </MarqueeItem>
     </Marquee>
-    <Marquee title="two" direction="rtl" rotation={4}>
+    <Marquee title="two" direction="rtl" duration={30} rotation={4}>
       <MarqueeItem>
         <span class="spinner">&#10033;</span> Buttons
       </MarqueeItem>
